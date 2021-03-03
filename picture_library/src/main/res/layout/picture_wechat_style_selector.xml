@@ -21,6 +21,16 @@
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp" />
 
+    <com.luck.picture.lib.widget.RecyclerFastScroller
+        android:id="@+id/fast_scroller"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/select_bar_layout"
+        android:layout_below="@id/titleBar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
     <TextView
         android:id="@+id/tv_empty"
         android:layout_width="match_parent"

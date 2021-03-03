@@ -68,6 +68,7 @@ import com.luck.picture.lib.tools.StringUtils;
 import com.luck.picture.lib.tools.ToastUtils;
 import com.luck.picture.lib.tools.ValueOf;
 import com.luck.picture.lib.widget.FolderPopWindow;
+import com.luck.picture.lib.widget.RecyclerFastScroller;
 import com.luck.picture.lib.widget.RecyclerPreloadView;
 import com.yalantis.ucrop.UCrop;
 import com.yalantis.ucrop.model.CutInfo;
@@ -94,8 +95,9 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
     protected TextView mTvPictureTitle, mTvPictureRight, mTvPictureOk, mTvEmpty,
             mTvPictureImgNum, mTvPicturePreview, mTvPlayPause, mTvStop, mTvQuit,
             mTvMusicStatus, mTvMusicTotal, mTvMusicTime;
-    protected RecyclerPreloadView mRecyclerView;
-    protected RelativeLayout mBottomLayout;
+    protected RecyclerPreloadView  mRecyclerView;
+    protected RecyclerFastScroller mScroller;
+    protected RelativeLayout       mBottomLayout;
     protected PictureImageGridAdapter mAdapter;
     protected FolderPopWindow folderWindow;
     protected Animation animation = null;
@@ -170,6 +172,8 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
         mTvPicturePreview = findViewById(R.id.picture_id_preview);
         mTvPictureImgNum = findViewById(R.id.tv_media_num);
         mRecyclerView = findViewById(R.id.picture_recycler);
+        mScroller = findViewById(R.id.fast_scroller);
+        mScroller.setRecyclerView(mRecyclerView);
         mBottomLayout = findViewById(R.id.select_bar_layout);
         mTvEmpty = findViewById(R.id.tv_empty);
         isNumComplete(numComplete);

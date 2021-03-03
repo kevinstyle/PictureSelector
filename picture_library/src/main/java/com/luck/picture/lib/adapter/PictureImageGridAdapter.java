@@ -30,6 +30,7 @@ import com.luck.picture.lib.tools.MediaUtils;
 import com.luck.picture.lib.tools.StringUtils;
 import com.luck.picture.lib.tools.ToastUtils;
 import com.luck.picture.lib.tools.VoiceUtils;
+import com.luck.picture.lib.widget.RecyclerFastScroller;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -43,7 +44,7 @@ import java.util.List;
  * @date：2016-12-30 12:02
  * @describe：PictureImageGridAdapter
  */
-public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements RecyclerFastScroller.FastScrollable {
 
     private Context context;
     private boolean showCamera;
@@ -374,6 +375,12 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public int getItemCount() {
         return showCamera ? data.size() + 1 : data.size();
+    }
+
+    @NotNull
+    @Override
+    public String setBubbleText(int position) {
+        return getItem(position).getFileName();
     }
 
     public class CameraViewHolder extends RecyclerView.ViewHolder {
