@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         RadioGroup.OnCheckedChangeListener, CompoundButton.OnCheckedChangeListener {
     private final static String TAG = MainActivity.class.getSimpleName();
     private GridImageAdapter mAdapter;
-    private int maxSelectNum = 9;
+    private int maxSelectNum = 300;
     private TextView tv_select_num;
     private TextView tv_original_tips;
     private TextView tvDeleteText;
@@ -449,7 +449,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         //.setButtonFeatures(CustomCameraView.BUTTON_STATE_BOTH)// 设置自定义相机按钮状态
                         .maxSelectNum(maxSelectNum)// 最大图片选择数量
                         .minSelectNum(1)// 最小选择数量
-                        .maxVideoSelectNum(1) // 视频最大选择数量
+                        .maxVideoSelectNum(maxSelectNum) // 视频最大选择数量
                         //.minVideoSelectNum(1)// 视频最小选择数量
                         //.closeAndroidQChangeVideoWH(!SdkVersionUtils.checkedAndroid_Q())// 关闭在AndroidQ下获取图片或视频宽高相反自动转换
                         .imageSpanCount(4)// 每行显示个数
@@ -472,14 +472,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .isPreviewVideo(cb_preview_video.isChecked())// 是否可预览视频
                         //.querySpecifiedFormatSuffix(PictureMimeType.ofJPEG())// 查询指定后缀格式资源
                         .isEnablePreviewAudio(cb_preview_audio.isChecked()) // 是否可播放音频
-                        .isCamera(cb_isCamera.isChecked())// 是否显示拍照按钮
+                        .isCamera(false)// 是否显示拍照按钮
                         //.isMultipleSkipCrop(false)// 多图裁剪时是否支持跳过，默认支持
                         //.isMultipleRecyclerAnimation(false)// 多图裁剪底部列表显示动画效果
                         .isZoomAnim(true)// 图片列表点击 缩放效果 默认true
                         //.imageFormat(PictureMimeType.PNG)// 拍照保存图片格式后缀,默认jpeg,Android Q使用PictureMimeType.PNG_Q
-                        .isEnableCrop(cb_crop.isChecked())// 是否裁剪
+                        .isEnableCrop(false)// 是否裁剪 cb_crop.isChecked()
                         //.basicUCropConfig()//对外提供所有UCropOptions参数配制，但如果PictureSelector原本支持设置的还是会使用原有的设置
-                        .isCompress(cb_compress.isChecked())// 是否压缩
+                        .isCompress(false)// 是否压缩 cb_compress.isChecked()
                         //.compressQuality(80)// 图片压缩后输出质量 0~ 100
                         .synOrAsy(false)//同步true或异步false 压缩 默认同步
                         //.queryMaxFileSize(10)// 只查多少M以内的图片、视频、音频  单位M

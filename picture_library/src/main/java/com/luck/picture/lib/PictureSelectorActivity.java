@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.os.SystemClock;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -708,6 +709,13 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
                     (OnQueryDataResultListener<LocalMediaFolder>) (data, currentPage, isHasMore) -> {
                         if (!isFinishing()) {
                             this.isHasMore = true;
+
+                            // 加入開啟按鈕
+                            LocalMediaFolder mediaFolder = new LocalMediaFolder();
+                            mediaFolder.setBucketId(0);
+                            mediaFolder.setName("開啟外部");
+                            data.add(mediaFolder);
+
                             initPageModel(data);
                             synchronousCover();
                         }

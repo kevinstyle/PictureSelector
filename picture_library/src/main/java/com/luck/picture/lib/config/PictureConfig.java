@@ -40,9 +40,9 @@ public final class PictureConfig {
     public final static String EXTRA_ALL_FOLDER_SIZE = "all_folder_size";
     public final static String EXTRA_QUICK_CAPTURE = "android.intent.extra.quickCapture";
 
-    public final static int MAX_PAGE_SIZE = 60;
+    public final static int MAX_PAGE_SIZE = 1000;
 
-    public final static int MIN_PAGE_SIZE = 10;
+    public final static int MIN_PAGE_SIZE = 100;
 
     public final static int LOADED = 0;
 
